@@ -5,6 +5,7 @@
 ```sh
 mkdir -p ~/.config
 ln -s $PWD/i3 ~/.config/i3
+ln -s $PWD/tmux ~/.config/tmux
 ln -s $PWD/wallpaper.png ~/.config/wallpaper.png
 ```
 
