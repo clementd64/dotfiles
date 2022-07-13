@@ -5,6 +5,7 @@
 ```sh
 mkdir -p ~/.config
 ln -s $PWD/alacritty ~/.config/alacritty
+ln -s $PWD/fish ~/.config/fish
 ln -s $PWD/i3 ~/.config/i3
 ln -s $PWD/nvim ~/.config/nvim
 ln -s $PWD/tmux ~/.config/tmux
