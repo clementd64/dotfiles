@@ -18,6 +18,8 @@ if status is-interactive
 	set -x VISUAL nvim
 
 	alias todo="nvim ~/.todo"
+
+	starship init fish | source
 end
 
 function fish_greeting

@@ -11,6 +11,7 @@ ln -s $PWD/nvim ~/.config/nvim
 ln -s $PWD/tmux ~/.config/tmux
 ln -s $PWD/gitconfig ~/.gitconfig
 ln -s $PWD/gitignore ~/.gitignore
+ln -s $PWD/starship.toml ~/.config/starship.toml
 ln -s $PWD/wallpaper.png ~/.config/wallpaper.png
 ```
 
