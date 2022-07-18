@@ -1,0 +1,12 @@
+configuration {
+  font:               "Fira Code 16";
+  modi:               "run,calc,filebrowser";
+
+  location:           6;
+  yoffset:            -105;
+
+  show-icons:         true;
+  icon-theme:         "Papirus";
+}
+
+@import "theme.rasi"

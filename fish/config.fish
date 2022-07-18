@@ -10,7 +10,7 @@ if status is-interactive
 	abbr -a -g -- kns 'kubectl config set-context (kubectl config current-context) --namespace'
 
 	abbr -a -g -- ls exa
-	abbr -a -g -- cat 'bat --style=plain'
+	abbr -a -g -- cat bat
 
 	abbr -a -g -- vim 'nvim'
 	abbr -a -g -- v 'nvim'
@@ -18,6 +18,8 @@ if status is-interactive
 	set -x VISUAL nvim
 
 	alias todo="nvim ~/.todo"
+
+	fish_add_path -P "$HOME/.local/bin" "$HOME/go/bin"
 
 	starship init fish | source
 end

@@ -4,7 +4,9 @@
 
 ```sh
 mkdir -p ~/.config
+ln -s $PWD/rofi ~/.config/rofi
 ln -s $PWD/alacritty ~/.config/alacritty
+ln -s $PWD/dunst ~/.config/dunst
 ln -s $PWD/fish ~/.config/fish
 ln -s $PWD/i3 ~/.config/i3
 ln -s $PWD/nvim ~/.config/nvim
