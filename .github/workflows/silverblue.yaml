@@ -1,0 +1,38 @@
+name: Build Silverblue
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 1'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: quay.io/fedora-ostree-desktops/buildroot:latest
+      options: --privileged
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Login to GitHub Container Registry
+        run: skopeo login -u ${{ github.repository_owner }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
+
+      - name: Checkout base ostree config
+        run: git clone https://pagure.io/workstation-ostree-config.git --branch f39 --single-branch --depth 1
+        working-directory: ./atomic/silverblue
+
+      # Repo not loaded relatively to the imported file
+      - name: Copy repo files
+        run: cp -r workstation-ostree-config/*.repo .
+        working-directory: ./atomic/silverblue
+
+      - name: Remove gnome-software
+        run: sed -i '/gnome-software/d' workstation-ostree-config/gnome-desktop-pkgs.yaml
+        working-directory: ./atomic/silverblue
+
+      - name: Build image
+        run: rpm-ostree compose image --initialize-mode=if-not-exists --format=registry silverblue.yaml ghcr.io/${{ github.repository }}/silverblue:39
+        working-directory: ./atomic/silverblue

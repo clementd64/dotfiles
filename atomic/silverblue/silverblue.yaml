@@ -1,0 +1,18 @@
+include: workstation-ostree-config/fedora-silverblue.yaml
+ref: clementd64/silverblue/${releasever}/${basearch}
+releasever: 39
+
+packages:
+  - containerd.io
+  - docker-ce
+  - docker-ce-cli
+
+exclude-packages:
+  - gnome-software
+  - gnome-software-rpm-ostree
+
+add-files:
+  - [ docker.socket, /usr/lib/systemd/system/docker.socket.d/10-group.conf ]
+
+repos:
+  - docker-ce-stable
