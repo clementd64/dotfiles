@@ -21,7 +21,7 @@ jobs:
         run: skopeo login -u ${{ github.repository_owner }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
 
       - name: Checkout base ostree config
-        run: git clone https://pagure.io/workstation-ostree-config.git --branch f39 --single-branch --depth 1
+        run: git clone https://pagure.io/workstation-ostree-config.git --branch f40 --single-branch --depth 1
         working-directory: ./atomic/silverblue
 
       # Repo not loaded relatively to the imported file
@@ -34,5 +34,5 @@ jobs:
         working-directory: ./atomic/silverblue
 
       - name: Build image
-        run: rpm-ostree compose image --initialize-mode=if-not-exists --format=registry silverblue.yaml ghcr.io/${{ github.repository }}/silverblue:39
+        run: rpm-ostree compose image --initialize-mode=if-not-exists --format=registry silverblue.yaml ghcr.io/${{ github.repository }}/silverblue:40
         working-directory: ./atomic/silverblue

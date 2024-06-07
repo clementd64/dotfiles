@@ -1,6 +1,6 @@
 include: workstation-ostree-config/fedora-silverblue.yaml
 ref: clementd64/silverblue/${releasever}/${basearch}
-releasever: 39
+releasever: 40
 
 packages:
   - containerd.io
