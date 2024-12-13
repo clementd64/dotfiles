@@ -34,5 +34,5 @@ jobs:
         working-directory: ./atomic/silverblue
 
       - name: Build image
-        run: rpm-ostree compose image --initialize-mode=if-not-exists --format=registry silverblue.yaml ghcr.io/${{ github.repository }}/silverblue:40
+        run: rpm-ostree compose image --initialize-mode=if-not-exists --format=registry silverblue.yaml ghcr.io/${{ github.repository }}/silverblue:41
         working-directory: ./atomic/silverblue
