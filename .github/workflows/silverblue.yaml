@@ -21,7 +21,7 @@ jobs:
         run: skopeo login -u ${{ github.repository_owner }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
 
       - name: Checkout base ostree config
-        run: git clone https://pagure.io/workstation-ostree-config.git --branch f40 --single-branch --depth 1
+        run: git clone https://pagure.io/workstation-ostree-config.git --branch f41 --single-branch --depth 1
         working-directory: ./atomic/silverblue
 
       # Repo not loaded relatively to the imported file
@@ -30,7 +30,7 @@ jobs:
         working-directory: ./atomic/silverblue
 
       - name: Remove gnome-software
-        run: sed -i '/gnome-software/d' workstation-ostree-config/gnome-desktop-pkgs.yaml
+        run: sed -i '/gnome-software/d' workstation-ostree-config/*.yaml
         working-directory: ./atomic/silverblue
 
       - name: Build image
