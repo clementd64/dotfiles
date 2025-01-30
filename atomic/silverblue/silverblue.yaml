@@ -3,6 +3,7 @@ ref: clementd64/silverblue/${releasever}/${basearch}
 releasever: 41
 
 packages:
+  - code
   - containerd.io
   - docker-ce
   - docker-ce-cli
@@ -19,4 +20,5 @@ add-files:
   - [ docker.socket, /usr/lib/systemd/system/docker.socket.d/10-group.conf ]
 
 repos:
+  - code
   - docker-ce-stable
