@@ -6,6 +6,9 @@ packages:
   - containerd.io
   - docker-ce
   - docker-ce-cli
+  # Can't be run inside flatpak for the extension to work
+  - chromium
+  - keepassxc
 
 exclude-packages:
   - gnome-software
